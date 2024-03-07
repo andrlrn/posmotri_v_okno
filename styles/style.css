@@ -110,13 +110,13 @@ ol {
 }
 
 .content__card-link {
+    display: block;
     text-decoration: none;
     color: inherit;
 }
 
 .content__card-link_current,
 .content__card-link:active {
-    display: block;
     background-color: #545050;
 }
 
@@ -143,12 +143,12 @@ ol {
     flex-direction: column;
     gap: 6px;
     flex-grow: 1;
-    padding: 5px 2px;
+    padding: 4px 2px;
 }
 
 .content__video-card-description {
     font-size: 18px;
-    line-height: 18.2px;
+    line-height: 16.2px;
     font-weight: 400;
 }
 
@@ -214,8 +214,8 @@ ol {
     display: flex;
     flex-direction: row;
     gap: 15px;
-    margin-block-end: 5px;
-    margin-inline-start: 5px;
+    margin-block-end: 4px;
+    margin-inline-start: 2px;
 }
 
 .search-form__pseudo-checkbox::before {
@@ -232,9 +232,6 @@ ol {
     outline-offset: 1px;
 }
 
-.search-form__label-text {
-    margin-inline-start: 20px;
-}
 
 .search-form__label:not(:has(.search-form__textfield)):hover {
     text-decoration: underline;
