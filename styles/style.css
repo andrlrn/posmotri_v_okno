@@ -143,7 +143,7 @@ ol {
     flex-direction: column;
     gap: 6px;
     flex-grow: 1;
-    padding: 4px 2px;
+    padding: 3px 2px;
 }
 
 .content__video-card-description {
