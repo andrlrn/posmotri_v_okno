@@ -1,21 +1,23 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  block-size: 100%;
+    block-size: 100%;
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
-  margin: auto;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  background-color: #1b1919;
+    inline-size: 1200px;
+    block-size: 100%;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    color: #fff;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 18px;
+    background-color: #1b1919;
 }
 
 h1,
@@ -28,11 +30,240 @@ ol,
 li,
 blockquote,
 fieldset {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 ul,
 ol {
-  list-style: none;
+    list-style: none;
+}
+
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+}
+
+.content {
+    display: flex;
+    height: min-content;
+    width: 1140px;
+    align-items: end;
+    gap: 30px;
+}
+
+.result__video-container {
+    position: relative;
+    width: 711px;
+    height: 386px;
+    margin-block-end: 16px;
+}
+
+.result__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.content__details {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    height: 100%;
+    width: 100%;
+}
+
+.title {
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    font-size: 75px;
+    line-height: 71px;
+    font-weight: 700;
+}
+
+.content__accent {
+    color: #545050;
+}
+
+.content__list {
+    height: 298px;
+    overflow-y: auto;
+    position: relative;
+    scrollbar-width: thin;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.content__card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.content__card-link_current .content__video-card,
+.content__video-card:active {
+    background-color: #545050;
+}
+
+.content__card-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.content__video-card {
+    display: flex;
+    align-items: flex-start;
+}
+
+.content__video-card-title {
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.content__video-card-description-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.content__video-card-description {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.content__video-card-description:hover {
+    text-decoration-thickness: 1px;
+}
+
+.content__video-card-thumbnail {
+    width: 194px;
+    height: 103px;
+    object-fit: cover;
+}
+
+/* форма */
+.search-form__fieldset {
+    border: none;
+}
+
+.search-form__label {
+    display: flex;
+    cursor: pointer;
+    width: fit-content;
+    gap: 5px;
+}
+
+.search-form__fieldset-title {
+    font-size: 18px;
+    font-weight: 400;
+    margin-block-end: 5px;
+}
+
+/* строка поиска */
+.search-form__textfield {
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 0;
+    border-right-color: transparent;
+    border-left-color: transparent;;
+    width: 225px;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 400;
+}
+
+.search-form__textfield:active {
+    border-right-color: #fff;
+    border-left-color: #fff;
+}
+
+.search-form__textfield::placeholder {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/* чекбоксы */
+.search-form__checkbox-list {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+    width: 19px;
+    height: 19px;
+    border: 1px solid #fff;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox {
+    background-color: #fff;
+    outline: 1px solid #fff;
+    outline-offset: 1px;
+}
+
+.search-form__label:not(:has(.search-form__textfield)):hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* стилизация кнопки */
+.button {
+    font-family: inherit;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.button:active {
+    background-color: #545050;
+}
+
+.button:hover {
+    text-decoration: underline;
+}
+
+.search-form__submit-button {
+    width: 194px;
+    height: 34px;
+}
+
+.more-button {
+    width: 399px;
+    height: 34px;
+}
+
+/* focus */
+.button:focus,
+.search-form__label:focus,
+.content__list-item:focus,
+.search-form__textfield:focus {
+    outline: none;
+}
+
+.button:focus-visible,
+.search-form__label:focus-visible,
+.content__list-item:focus-visible,
+.search-form__textfield:focus-visible {
+    outline: 1px solid #fff;
+    outline-offset: 1px;
 }
